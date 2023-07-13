@@ -1,3 +1,13 @@
 table {
     width: 100%;
 }
+
+.icon {
+    cursor: pointer;
+}
+
+.custom-modalbox{
+    mat-dialog-container {
+        padding: 0;
+    }
+}

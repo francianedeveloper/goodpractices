@@ -1,1 +1,11 @@
-<p>comments works!</p>
+<div style="text-align: center;"><h1><b>Comments:</b></h1></div>
+<mat-dialog-content class="mat-typography">
+    <div class="div-comment" *ngFor="let element of data.comments; let i = index">
+        <h3><b>Title:</b> {{ element.titleComment}}</h3>
+        <p><b>Content:</b> {{ element.describeComment}}</p>
+        <h4><b>Email:</b> {{ element.emailComment}}</h4>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions [align]="'end'">
+    <button mat-button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

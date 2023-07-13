@@ -1,6 +1,46 @@
-<h1>Posts</h1>
+<div style="text-align: center;"><h1>Posts</h1></div>
 
 <div class="mat-elevation-z8" *ngIf="!loading">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="idPost">
+      <th mat-header-cell *matHeaderCellDef> Post_ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.idPost}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="idUser">
+      <th mat-header-cell *matHeaderCellDef> User_ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.idUser}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="titlePost">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.titlePost}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="describePost">
+      <th mat-header-cell *matHeaderCellDef> Describe </th>
+      <td mat-cell *matCellDef="let element"> {{element.describePost}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef> Action</th>
+      <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" aria-label="comments" class="icon" fontIcon="comment" (click)="openDialog(element.idPost)"></mat-icon></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>  
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" [length]="resultsLength" [pageSize]="10" aria-label="Select page of GitHub search results"></mat-paginator>
 </div>
 
   

@@ -7,6 +7,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [PostComponent, CommentComponent],
@@ -16,7 +18,9 @@ import { MatTableModule } from '@angular/material/table';
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    MatDialogModule
   ],
 })
 export class PostModule {
